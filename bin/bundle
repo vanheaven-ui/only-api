@@ -1,4 +1,4 @@
-# rubocop: disable Metrics/PerceivedComplexity Layout/LineLength
+# rubocop: disable Metrics/PerceivedComplexity Layout/LineLength Lint/ScriptPermission
 
 #!/usr/bin/env ruby
 #
@@ -117,4 +117,4 @@ m.load_bundler!
 
 load Gem.bin_path('bundler', 'bundle') if m.invoked_as_script?
 
-# rubocop: enable Metrics/PerceivedComplexity Layout/LineLength
+# rubocop: enable Metrics/PerceivedComplexity Layout/LineLength Lint/ScriptPermission
