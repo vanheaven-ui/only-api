@@ -68,7 +68,7 @@ RSpec.describe 'Categories API', type: :request do
     end
 
     context 'when the request is invalid' do
-      before { post '/api/categories', params: {} }
+      before { post '/api/categories', params: {name: 'Hi'} }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -76,7 +76,7 @@ RSpec.describe 'Categories API', type: :request do
 
       it 'returns a validation failure message' do
         expect(response.body)
-          .to match(/Validation failed: Name can't be blank, Name is too short (minimum is 3 characters)/)
+          .to match(/"Validation failed: Name is too short (minimum is 3 characters)"/)
       end
     end
   end

@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.create!(category_params)
 
-    json_response(@category)
+    json_response(@category, :created)
   end
 
   def show
