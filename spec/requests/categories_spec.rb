@@ -7,7 +7,7 @@ RSpec.describe "Categories API", type: :request do
   describe "GET /api/categories" do
     before { get "/api/categories" }
 
-    it 'returns todos' do
+    it 'returns categories' do
       expect(json.size).to eq(10)
     end
 
@@ -92,14 +92,6 @@ RSpec.describe "Categories API", type: :request do
       it 'returns a not found message' do
         expect(response.body).to match(/Couldn't find Category/)
       end
-    end
-  end
-
-  describe 'DELETE /api/catgeories/:id' do
-    before { delete "/api/catgeories/#{category_id}" }
-
-    it 'returns status code 204' do
-      expect(response).to have_http_status(204)
     end
   end
 end
