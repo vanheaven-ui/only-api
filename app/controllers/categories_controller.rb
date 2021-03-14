@@ -20,14 +20,14 @@ class CategoriesController < ApplicationController
 
   def update
     @category.update(category_params)
-    
+
     head :no_content
   end
 
   private
 
   def category_params
-    params.permit(:Name)
+    params.permit(:name)
   end
 
   def set_category
