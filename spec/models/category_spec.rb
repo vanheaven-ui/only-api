@@ -8,6 +8,6 @@ RSpec.describe Category, type: :model do
   context 'validations' do
     it { should validate_presence_of(:name) }
     it { should validate_length_of(:name).is_at_least(3) }
-    it { should validate_uniqueness_of(:name).case_sensitive }
+    it { should validate_uniqueness_of(:name).case_insensitive }
   end
 end
