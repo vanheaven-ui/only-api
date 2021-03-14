@@ -2,6 +2,6 @@ require 'faker'
 
 FactoryBot.define do
   factory :category do
-    name { Faker::Book.genre }
+    sequence(:name) { |n| Faker::Book.genre + "#{n}" }
   end
 end
