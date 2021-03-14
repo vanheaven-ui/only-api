@@ -1,8 +1,7 @@
 class PublicationsController < ApplicationController
-
   before_action :set_user
   before_action :set_category, only: [:create]
-  before_action :set_publication, only: [:show, :update, :destroy]
+  before_action :set_publication, only: %i[show update destroy]
 
   def index
     json_response(@user.publications)

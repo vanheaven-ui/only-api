@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "Publications", type: :request do
+RSpec.describe 'Publications', type: :request do
   let!(:category) { create(:category) }
   let!(:user) { create(:user) }
   let!(:publications) { create_list(:publication, 5, user_id: user.id, category_id: category.id) }
   let(:id) { publications.first.id }
   let(:user_id) { user.id }
 
-  describe "GET /api/users/:user_id/publications" do
-    before { get "/api/users/#{user_id}/publications"}
+  describe 'GET /api/users/:user_id/publications' do
+    before { get "/api/users/#{user_id}/publications" }
 
     it 'returns user\'s publications' do
       expect(json).not_to be_empty
@@ -21,7 +21,7 @@ RSpec.describe "Publications", type: :request do
   end
 
   describe 'GET /api/users/:user_id/publications/:id' do
-    before { get "/api/users/#{user_id}/publications/#{id}"}
+    before { get "/api/users/#{user_id}/publications/#{id}" }
 
     context 'when publication exists' do
       it 'returns the publication' do
@@ -97,7 +97,7 @@ RSpec.describe "Publications", type: :request do
   end
 
   describe 'DELETE /api/users/:user_id/publications/:id' do
-    before { delete "/api/users/#{user_id}/publications/#{id}"}
+    before { delete "/api/users/#{user_id}/publications/#{id}" }
 
     it 'returns status code 204' do
       expect(response).to have_http_status(204)
