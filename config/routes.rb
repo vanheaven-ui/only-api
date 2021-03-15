@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   scope :api, defaults: { format: :json } do
     resources :users do
       resources :publications
+      resources :comments
     end
     resources :categories, except: [:destroy]
   end
